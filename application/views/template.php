@@ -33,7 +33,7 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="<?= base_url('') ?>" class="logo">
+            <a href="<?= base_url('dashboard') ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
@@ -93,7 +93,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="<?= base_url('assets/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="<?= base_url('assets/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
 
                                     <p>
                                         <?= ucfirst($this->user_data->user_login_data()->name) ?> - Web Developer
@@ -151,7 +151,7 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="#"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="<?= site_url('dashboard') ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-truck"></i><span>Suppliers</span></a>
@@ -193,7 +193,7 @@
                     </li>
                     <?php if ($this->session->userdata('level') == 1) { ?>
                         <li class="header">SETTINGS</li>
-                        <li><a href="#"><i class="fa fa-user"></i> <span>User</span></a></li>
+                        <li><a href="<?= site_url('user') ?>"><i class="fa fa-user"></i> <span>User</span></a></li>
                     <?php } ?>
                 </ul>
             </section>
