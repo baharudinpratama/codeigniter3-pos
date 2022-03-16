@@ -88,7 +88,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?= base_url('assets/dist/img/user2-160x160.jpg') ?>" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Baharudin Pratama</span>
+                                <span class="hidden-xs"><?= ucfirst($this->user_data->user_login_data()->username) ?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -96,8 +96,8 @@
                                     <img src="<?= base_url('assets/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Baharudin Pratama - Web Developer
-                                        <small>Member since March. 2022</small>
+                                        <?= ucfirst($this->user_data->user_login_data()->name) ?> - Web Developer
+                                        <small><?= $this->user_data->user_login_data()->address ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -132,7 +132,7 @@
                         <img src="<?= base_url('assets/dist/img/user2-160x160.jpg') ?>" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Baharudin Pratama</p>
+                        <p><?= ucfirst($this->user_data->user_login_data()->username) ?></p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
