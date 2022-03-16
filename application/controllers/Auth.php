@@ -33,4 +33,11 @@ class Auth extends CI_Controller
             }
         }
     }
+
+    public function logout()
+    {
+        $params = ['user_id', 'level'];
+        $this->session->unset_userdata($params);
+        redirect('auth/login');
+    }
 }
