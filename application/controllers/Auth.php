@@ -5,6 +5,7 @@ class Auth extends CI_Controller
 {
     public function login()
     {
+        user_already_login();
         $this->load->view('auth/login');
     }
 
@@ -36,7 +37,7 @@ class Auth extends CI_Controller
 
     public function logout()
     {
-        $params = ['user_id', 'level'];
+        $params = ['id', 'level'];
         $this->session->unset_userdata($params);
         redirect('auth/login');
     }
