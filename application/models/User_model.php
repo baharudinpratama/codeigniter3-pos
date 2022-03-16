@@ -28,9 +28,22 @@ class User_model extends CI_Model
         $data['username'] = $post['username'];
         $data['password'] = sha1($post['password']);
         $data['name'] = $post['name'];
-        $data['address'] = $post['address'];
-        $data['level'] = $post['level'] != "" ? $post['address'] : null;
+        $data['address'] = $post['address'] != "" ? $post['address'] : null;
+        $data['level'] = $post['level'];
         $this->db->insert('users', $data);
+    }
+
+    public function updateUserById($post)
+    {
+        $data['username'] = $post['username'];
+        if (!empty($post['password'])) {
+            $data['password'] = sha1($post['password']);
+        }
+        $data['name'] = $post['name'];
+        $data['address'] = $post['address'] != "" ? $post['address'] : null;
+        $data['level'] = $post['level'];
+        $this->db->where('id', $post['id']);
+        $this->db->update('users', $data);
     }
 
     public function deleteUserById($id)
