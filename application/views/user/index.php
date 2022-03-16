@@ -46,12 +46,15 @@
                                     <td><?= $user->address ?></td>
                                     <td><?= $user->level == 1 ? "Admin" : "Cashier" ?></td>
                                     <td class="text-center" width="160px">
-                                        <a href="<?= site_url('user/edit/'); ?>" class="btn btn-warning btn-xs btn-flat">
-                                            <i class="fa fa-pencil"></i> Edit
-                                        </a>
-                                        <a href="<?= site_url('user/delete/'); ?>" class="btn btn-danger btn-xs btn-flat">
-                                            <i class="fa fa-trash"></i> Delete
-                                        </a>
+                                        <form action="<?= site_url('user/delete'); ?>" method="post">
+                                            <a href="<?= site_url('user/edit/' . $user->id); ?>" class="btn btn-warning btn-xs btn-flat">
+                                                <i class="fa fa-pencil"></i> Edit
+                                            </a>
+                                            <input type="hidden" name="id" value="<?= $user->id ?>">
+                                            <button class="btn btn-danger btn-xs btn-flat" onclick="return confirm('Are you sure?')">
+                                                <i class="fa fa-trash"></i> Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

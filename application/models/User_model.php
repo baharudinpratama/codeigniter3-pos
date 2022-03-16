@@ -32,4 +32,10 @@ class User_model extends CI_Model
         $data['level'] = $post['level'] != "" ? $post['address'] : null;
         $this->db->insert('users', $data);
     }
+
+    public function deleteUserById($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('users');
+    }
 }

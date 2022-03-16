@@ -35,4 +35,14 @@ class User extends CI_Controller
             echo "<script> window.location='" . site_url('user') . "' </script>";
         }
     }
+
+    public function delete()
+    {
+        $id = $this->input->post('id');
+        $this->user_model->deleteUserById($id);
+        if ($this->db->affected_rows() > 0) {
+            echo "<script> alert('Data deleted.') </script>";
+        }
+        echo "<script> window.location='" . site_url('user') . "' </script>";
+    }
 }
