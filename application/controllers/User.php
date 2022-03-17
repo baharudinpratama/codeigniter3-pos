@@ -7,6 +7,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         user_not_login();
+        check_admin();
         $this->load->model('user_model');
         $this->load->library('form_validation');
     }

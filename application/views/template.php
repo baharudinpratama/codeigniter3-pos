@@ -191,7 +191,7 @@
                             <li><a href="#"><i class="fa fa-circle-o"></i> Stocks</a></li>
                         </ul>
                     </li>
-                    <?php if ($this->session->userdata('level') == 1) { ?>
+                    <?php if ($this->user_data->user_login_data()->level == 1) { ?>
                         <li class="header">SETTINGS</li>
                         <li><a href="<?= site_url('user') ?>"><i class="fa fa-user"></i> <span>User</span></a></li>
                     <?php } ?>
